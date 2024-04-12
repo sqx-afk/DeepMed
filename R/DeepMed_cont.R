@@ -1,6 +1,8 @@
 
 DeepMed_cont=function(y,d,m,x,method,hyper,trim=0.05){
 
+  xm=as.matrix(cbind(x,m))
+  
   if(method=="DNN"){ml=dnn}
   if(method=="GBM"){ml=gbm_out}
   if(method=="RF"){ml=rf_out}

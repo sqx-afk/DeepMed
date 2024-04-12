@@ -36,7 +36,8 @@ DeepMed_cont_cv=function(y,d,m,x,method,hyper_grid,epochs,batch_size){
     # 5. predict E(Y|X,D=1) in the test data
     # 6. fit E(Y|M,X,D=0) in first training data
     # 8. predict E(Y|X,D=0) in the test data
-    out <- foreach(t=1:nrow(hyper_grid), .combine=rbind,.packages=c("keras","gbm","randomForest")) %dopar% {
+    out <- foreach(t=1:nrow(hyper_grid), .combine=rbind,.packages=c("keras","gbm","randomForest"),
+                   .errorhandling="pass") %dopar% {
       set.seed(1)
       out1 = ml_cv(d[trsample],xm[trsample,],method, hyper_grid, t)
       out2 = ml_cv(d[trsample],x[trsample,],method, hyper_grid, t)
@@ -56,7 +57,8 @@ DeepMed_cont_cv=function(y,d,m,x,method,hyper_grid,epochs,batch_size){
     colnames(hyper_k)=c(1,2,3,5,6,8)
 
 
-    out <- foreach(t=1:nrow(hyper_grid), .combine=rbind,.packages=c("keras","gbm","randomForest")) %dopar% {
+    out <- foreach(t=1:nrow(hyper_grid), .combine=rbind,.packages=c("keras","gbm","randomForest"),
+                   .errorhandling="pass") %dopar% {
       set.seed(1)
       dtrte=d[deltasample]; xtrte=x[deltasample,]
 

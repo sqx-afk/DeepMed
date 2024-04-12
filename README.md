@@ -19,11 +19,11 @@ install_tensorflow()  # install the "tensorflow" python package
 ```
 DeepMed(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,trim=0.05)
 ```
-`y`: A numeric vector for the outcome variable in causal mediation analysis.
+`y`: A numeric vector for the outcome variable.
 
-`d`: A numeric vector for the binary treatment variable in causal mediation analysis, which is coded as 0 or 1.
+`d`: A numeric vector for the binary treatment variable, which is coded as 0 or 1.
 
-`m`: A numeric vector for the mediator variable in causal mediation analysis.
+`m`: A numeric vector or a numeric matrix (containing dummy variables for the categorical mediator) for the mediator variable.
 
 `x`: A numeric vector or a numeric matrix with p columns for p covariates in causal mediation analysis.
 

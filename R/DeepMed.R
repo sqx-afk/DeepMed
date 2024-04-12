@@ -1,7 +1,7 @@
 DeepMed=function(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,trim=0.05){
 
   if(method!="Lasso"){
-    hyper_grid = as.matrix(hyper_grid)
+    hyper_grid = as.data.frame(hyper_grid)
     hyper=DeepMed_cv(y,d,m,x,method,hyper_grid,epochs,batch_size)
   }else{
     hyper=matrix(NA,nrow=2,ncol=30)

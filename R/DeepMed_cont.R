@@ -1,13 +1,6 @@
 
 DeepMed_cont=function(y,d,m,x,method,hyper,trim=0.05){
 
-  y=as.vector(y);d=as.vector(d)
-  if(is.null(nrow(x))){x=matrix(as.matrix(x),length(x),1)
-  }else{x=matrix(as.matrix(x),nrow(x),ncol(x))}
-  if(is.null(nrow(m))){m=matrix(as.matrix(m),length(m),1)
-  }else{m=matrix(as.matrix(m),nrow(m),ncol(m))}
-  xm=as.matrix(cbind(x,m))
-
   if(method=="DNN"){ml=dnn}
   if(method=="GBM"){ml=gbm_out}
   if(method=="RF"){ml=rf_out}

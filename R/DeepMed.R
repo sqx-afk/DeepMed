@@ -8,11 +8,11 @@ DeepMed=function(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,tr
     warning("The treatment variable should be a numeric vector")
     break
   }
-  if(!is.vector(m)|!is.matrix(m)){
+  if(!is.vector(m) & !is.matrix(m)){
     warning("The mediator variable should be either a numeric vector or matrix")
     break
   }
-  if(!is.vector(x)|!is.matrix(x)){
+  if(!is.vector(x) & !is.matrix(x)){
     warning("The exposure variable(s) should be either a numeric vector or matrix")
     break
   }

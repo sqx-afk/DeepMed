@@ -13,7 +13,7 @@ DeepMed=function(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,tr
     break
   }
   if(!is.vector(x) & !is.matrix(x)){
-    warning("The exposure variable(s) should be either a numeric vector or matrix")
+    warning("The covariate(s) should be either a numeric vector or matrix")
     break
   }
 

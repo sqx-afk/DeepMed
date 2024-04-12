@@ -7,9 +7,14 @@ DeepMed=function(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,tr
     hyper=matrix(NA,nrow=2,ncol=30)
   }
 
-  mbin=1*(length(unique(m))==2 & min(m)==0 & max(m)==1)
-  if (mbin==0) temp=DeepMed_cont(y,d,m,x,method,hyper,trim)
-  if (mbin!=0) temp=DeepMed_bin(y,d,m,x,method,hyper,trim)
+ if(is.vector(m)){
+   mbin=1*(length(unique(m))==2 & min(m)==0 & max(m)==1)
+   if (mbin==0){temp=DeepMed_cont(y,d,m,x,method,hyper,trim)}
+   if (mbin==1){temp=DeepMed_bin(y,d,m,x,method,hyper,trim)}
+ }
+  if(is.matrix(m)){temp=DeepMed_cont(y,d,m,x,method,hyper,trim)}
+  
+ 
   ATE = temp$ATE
 
   eff=ATE[1:5]

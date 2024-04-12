@@ -1,5 +1,7 @@
 DeepMed_cont_cv=function(y,d,m,x,method,hyper_grid,epochs,batch_size){
 
+  xm=as.matrix(cbind(x,m))
+  
   if(method=="DNN"){ml=dnn}
   if(method=="GBM"){ml=gbm_out}
   if(method=="RF"){ml=rf_out}

@@ -25,7 +25,7 @@ DeepMed(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,trim=0.05)
 
 `m`: A numeric vector or a numeric matrix for the mediator variable. When the mediator is categorical, m is a matrix with q columns for q dummy variables. 
 
-`x`: A numeric vector or a numeric matrix with p columns for p covariates in causal mediation analysis.
+`x`: A numeric vector or a numeric matrix with p columns for p covariates.
 
 `method`: The method used to estimate the nuisance functions with a 3-fold cross-fitting. Four methods are provided: deep neural network ("DNN""), gradient boosting machine ("GBM"), random forest ("RF") and Lasso ("Lasso"). See details below. By default, `method="DNN"`.
 

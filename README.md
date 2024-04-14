@@ -23,7 +23,7 @@ DeepMed(y,d,m,x,method="DNN",hyper_grid=NA,epochs=500,batch_size=100,trim=0.05)
 
 `d`: A numeric vector for the binary treatment variable, which is coded as 0 or 1.
 
-`m`: A numeric vector or a numeric matrix for the mediator variable. When the mediator is categorical, m is a matrix with q columns for q dummy variables. 
+`m`: A numeric vector or a numeric matrix for the mediator variable. When the mediator is categorical, m should be a matrix with q columns for q dummy variables. 
 
 `x`: A numeric vector or a numeric matrix with p columns for p covariates.
 
